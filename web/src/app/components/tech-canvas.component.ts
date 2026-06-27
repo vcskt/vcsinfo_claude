@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-tech-canvas',
@@ -12,11 +12,11 @@ import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, OnDestroy } fr
         (mouseleave)="onMouseLeave()"
         (touchmove)="onTouchMove($event)"
         (touchend)="onTouchEnd()"
-      />
+      ></canvas>
       <!-- FPS Counter -->
       <div class="absolute bottom-4 left-4 z-10 select-none bg-black/50 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-800/80 font-mono text-[11px] text-slate-400 flex items-center gap-3">
         <span class="flex items-center gap-1.5">
-          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" ></span>
           FPS: <span class="text-emerald-400 font-semibold">{{ fps }}</span>
         </span>
         <span class="text-slate-600">|</span>

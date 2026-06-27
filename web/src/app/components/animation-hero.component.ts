@@ -1,11 +1,11 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-animation-hero',
   standalone: true,
   template: `
     <div #containerRef class="relative w-full h-full min-h-screen overflow-hidden">
-      <canvas #canvasRef class="absolute inset-0 block w-full h-full" />
+      <canvas #canvasRef class="absolute inset-0 block w-full h-full"></canvas>
     </div>
   `,
   styles: [`
