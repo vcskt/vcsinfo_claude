@@ -1,0 +1,152 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String   @id @default(cuid())
+  name          String
+  email         String   @unique
+  passwordHash  String?
+  googleId      String?  @unique
+  avatarUrl     String?
+  role          Role     @default(CLIENT)
+  emailVerified Boolean  @default(false)
+  locale        String   @default("pt")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  posts         BlogPost[]
+  tickets       Ticket[]
+
+  @@index([email])
+}
+
+enum Role {
+  CLIENT
+  ADMIN
+}
+
+model Project {
+  id          String         @id @default(cuid())
+  title       String
+  slug        String         @unique
+  summary     String
+  content     String
+  clientName  String?
+  ownerId     String?
+  status      ProjectStatus  @default(IN_PROGRESS)
+  techStack   String[]
+  coverUrl    String?
+  featured    Boolean        @default(false)
+  published   Boolean        @default(false)
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+
+  @@index([slug])
+  @@index([published])
+}
+
+enum ProjectStatus {
+  PLANNED
+  IN_PROGRESS
+  DELIVERED
+  PAUSED
+}
+
+model BlogPost {
+  id          String    @id @default(cuid())
+  title       String
+  slug        String    @unique
+  excerpt     String
+  content     String
+  coverUrl    String?
+  category    String?
+  tags        String[]
+  locale      String    @default("pt")
+  authorId    String
+  author      User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  published   Boolean   @default(false)
+  publishedAt DateTime?
+  views       Int       @default(0)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([slug])
+  @@index([locale])
+  @@index([published])
+}
+
+model Lead {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  company   String?
+  subject   String?
+  message   String
+  source    String?
+  locale    String?
+  createdAt DateTime @default(now())
+
+  @@index([email])
+  @@index([createdAt])
+}
+
+model Ticket {
+  id        String        @id @default(cuid())
+  userId    String
+  user      User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  projectId String?
+  title     String
+  status    TicketStatus  @default(OPEN)
+  priority  TicketPriority @default(MEDIUM)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+  comments  TicketComment[]
+
+  @@index([userId])
+  @@index([status])
+}
+
+enum TicketStatus {
+  OPEN
+  IN_PROGRESS
+  WAITING
+  RESOLVED
+  CLOSED
+}
+
+enum TicketPriority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
+model TicketComment {
+  id        String   @id @default(cuid())
+  ticketId  String
+  ticket    Ticket   @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  authorId  String
+  body      String
+  createdAt DateTime @default(now())
+
+  @@index([ticketId])
+}
+
+model Testimonial {
+  id        String   @id @default(cuid())
+  author    String
+  role      String?
+  company   String?
+  quote     String
+  avatarUrl String?
+  published Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([published])
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Tech Animation Studio",
+  "description": "Interactive showcase and generator for high-performance visual tech animations, with custom parameter editors and ready-to-use Angular components.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

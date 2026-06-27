@@ -1,0 +1,37 @@
+{
+  "name": "vcsinfo",
+  "type": "javascript",
+  "main": "dist/apps/web/server.js",
+  "env": {
+    "production": {
+      "name": "vcsinfo-prod",
+      "routes": [
+        {
+          "pattern": "vcsinfo.com.br",
+          "zone_name": "vcsinfo.com.br"
+        }
+      ]
+    },
+    "staging": {
+      "name": "vcsinfo-staging",
+      "routes": [
+        {
+          "pattern": "staging.vcsinfo.com.br",
+          "zone_name": "vcsinfo.com.br"
+        }
+      ]
+    }
+  },
+  "vars": {
+    "API_DOMAIN": "https://api.vcsinfo.com.br",
+    "DEFAULT_LOCALE": "pt"
+  },
+  "kv_namespaces": [],
+  "durable_objects": {
+    "bindings": []
+  },
+  "deployment": {
+    "route": "/",
+    "namespace_id": ""
+  }
+}

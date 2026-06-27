@@ -1,0 +1,88 @@
+{
+  "header": {
+    "logo": "VCS Info",
+    "nav": {
+      "home": "Inicio",
+      "services": "Servicios",
+      "projects": "Proyectos",
+      "blog": "Blog",
+      "contact": "Contacto"
+    },
+    "auth": {
+      "login": "Iniciar Sesión",
+      "signup": "Registrarse"
+    }
+  },
+  "hero": {
+    "title": "Expertos que entregan el mismo stack que dominamos",
+    "subtitle": "Consultoría Protheus & Angular. Nuestro sitio está hecho con Angular.",
+    "cta": "Solicitar Presupuesto",
+    "ctaSecondary": "Ver Proyectos"
+  },
+  "value": {
+    "title": "¿Por qué elegir VCS Info?",
+    "items": [
+      {
+        "title": "Expertise Dual",
+        "description": "Conocimiento profundo en Protheus (TOTVS) y Angular moderno"
+      },
+      {
+        "title": "Entrega Garantizada",
+        "description": "Proyectos entregados a tiempo con calidad excepcional"
+      },
+      {
+        "title": "Stack Moderno",
+        "description": "ADVPL, TLPP, PO-UI, Angular, NestJS, PostgreSQL"
+      }
+    ]
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "items": [
+      {
+        "title": "Customización Protheus",
+        "description": "ADVPL, TLPP, integraciones, módulos específicos"
+      },
+      {
+        "title": "Frontend Angular",
+        "description": "Interfaces modernas con PO-UI y Angular standalone"
+      },
+      {
+        "title": "Integraciones",
+        "description": "APIs REST, webhooks, ETL, sincronización de datos"
+      },
+      {
+        "title": "Soporte",
+        "description": "Mantenimiento, optimización, soporte técnico"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Proyectos Destacados",
+    "viewMore": "Ver Todos los Proyectos"
+  },
+  "testimonials": {
+    "title": "Lo que dicen nuestros clientes"
+  },
+  "cta": {
+    "title": "Transforma tu Protheus",
+    "subtitle": "Solicita un presupuesto gratuito para tu proyecto",
+    "button": "Hablar con un Experto"
+  },
+  "footer": {
+    "company": "VCS Info — Consultoría Protheus & Angular",
+    "copyright": "© 2026 VCS Info. Todos los derechos reservados.",
+    "links": {
+      "privacy": "Privacidad",
+      "terms": "Términos",
+      "contact": "Contacto"
+    },
+    "social": "Redes Sociales"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Ocurrió un error",
+    "success": "¡Éxito!",
+    "back": "Atrás"
+  }
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Rain Animation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const charWidth = 14;
+        const columns = Math.ceil(canvas.width / charWidth);
+        const columnData = [];
+
+        // Initialize columns
+        for (let i = 0; i < columns; i++) {
+            columnData.push({
+                x: i * charWidth,
+                y: Math.random() * canvas.height,
+                speed: Math.random() * 3 + 2,
+                chars: Array(30).fill(0).map(() => Math.random() > 0.5 ? '1' : '0')
+            });
+        }
+
+        let lastTime = performance.now();
+
+        function animate(now) {
+            const delta = (now - lastTime) / 16.666;
+            lastTime = now;
+
+            // Background com decay
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.font = 'bold 14px monospace';
+            ctx.textBaseline = 'top';
+
+            // Render each column
+            columnData.forEach(col => {
+                col.y += col.speed * delta;
+
+                // Reset quando sai da tela
+                if (col.y > canvas.height && Math.random() > 0.95) {
+                    col.y = -300;
+                    col.speed = Math.random() * 3 + 2;
+                }
+
+                // Randomize characters
+                if (Math.random() > 0.9) {
+                    col.chars.shift();
+                    col.chars.push(Math.random() > 0.5 ? '1' : '0');
+                }
+
+                // Draw characters
+                col.chars.forEach((char, index) => {
+                    const charY = col.y - index * 16;
+
+                    if (charY < -20 || charY > canvas.height) return;
+
+                    const alpha = 1 - (index / col.chars.length);
+
+                    if (index === 0) {
+                        // Bright lead character
+                        ctx.fillStyle = '#00ff88';
+                        ctx.shadowColor = '#00ff88';
+                        ctx.shadowBlur = 10;
+                    } else if (index < 4) {
+                        // Bright trail
+                        ctx.fillStyle = `rgba(0, 255, 136, ${alpha * 0.8})`;
+                        ctx.shadowColor = '#00ff88';
+                        ctx.shadowBlur = 5;
+                    } else if (index < 10) {
+                        // Medium green
+                        ctx.fillStyle = `rgba(0, 180, 100, ${alpha * 0.5})`;
+                        ctx.shadowBlur = 2;
+                    } else {
+                        // Fading
+                        ctx.fillStyle = `rgba(0, 100, 50, ${alpha * 0.3})`;
+                        ctx.shadowBlur = 0;
+                    }
+
+                    ctx.fillText(char, col.x, charY);
+                });
+            });
+
+            ctx.shadowBlur = 0;
+            requestAnimationFrame(animate);
+        }
+
+        // Handle resize
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // Start animation
+        requestAnimationFrame(animate);
+    </script>
+</body>
+</html>

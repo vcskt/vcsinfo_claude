@@ -1,0 +1,88 @@
+{
+  "header": {
+    "logo": "VCS Info",
+    "nav": {
+      "home": "Home",
+      "services": "Services",
+      "projects": "Projects",
+      "blog": "Blog",
+      "contact": "Contact"
+    },
+    "auth": {
+      "login": "Login",
+      "signup": "Sign Up"
+    }
+  },
+  "hero": {
+    "title": "Experts who deliver the same stack we master",
+    "subtitle": "Protheus & Angular Consulting. Our website is built with Angular.",
+    "cta": "Request a Quote",
+    "ctaSecondary": "View Projects"
+  },
+  "value": {
+    "title": "Why choose VCS Info?",
+    "items": [
+      {
+        "title": "Dual Expertise",
+        "description": "Deep knowledge in Protheus (TOTVS) and modern Angular"
+      },
+      {
+        "title": "Guaranteed Delivery",
+        "description": "Projects delivered on time with exceptional quality"
+      },
+      {
+        "title": "Modern Stack",
+        "description": "ADVPL, TLPP, PO-UI, Angular, NestJS, PostgreSQL"
+      }
+    ]
+  },
+  "services": {
+    "title": "Our Services",
+    "items": [
+      {
+        "title": "Protheus Customization",
+        "description": "ADVPL, TLPP, integrations, specific modules"
+      },
+      {
+        "title": "Angular Frontend",
+        "description": "Modern interfaces with PO-UI and Angular standalone"
+      },
+      {
+        "title": "Integrations",
+        "description": "REST APIs, webhooks, ETL, data synchronization"
+      },
+      {
+        "title": "Support",
+        "description": "Maintenance, performance optimization, technical support"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "viewMore": "View All Projects"
+  },
+  "testimonials": {
+    "title": "What our clients say"
+  },
+  "cta": {
+    "title": "Transform Your Protheus",
+    "subtitle": "Request a free quote for your project",
+    "button": "Talk to an Expert"
+  },
+  "footer": {
+    "company": "VCS Info — Protheus & Angular Consulting",
+    "copyright": "© 2026 VCS Info. All rights reserved.",
+    "links": {
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "contact": "Contact"
+    },
+    "social": "Social Media"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success!",
+    "back": "Back"
+  }
+}

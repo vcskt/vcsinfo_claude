@@ -48,3 +48,17 @@ Thumbs.db
 .nx/polygraph
 .nx/self-healing
 .nx/migrate-runs
+.angular
+
+__screenshots__/
+
+test-output
+
+# Environment / secrets (NEVER commit)
+.env
+.env.*
+!.env.example
+api/.env
+api/.env.*
+**/.env
+**/.env.local

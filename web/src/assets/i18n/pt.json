@@ -1,0 +1,88 @@
+{
+  "header": {
+    "logo": "VCS Info",
+    "nav": {
+      "home": "Início",
+      "services": "Serviços",
+      "projects": "Projetos",
+      "blog": "Blog",
+      "contact": "Contato"
+    },
+    "auth": {
+      "login": "Entrar",
+      "signup": "Cadastro"
+    }
+  },
+  "hero": {
+    "title": "Especialistas que entregam a mesma stack que dominam",
+    "subtitle": "Consultoria Protheus & Angular. O nosso site é feito em Angular.",
+    "cta": "Solicitar Orçamento",
+    "ctaSecondary": "Ver Projetos"
+  },
+  "value": {
+    "title": "Por que escolher a VCS Info?",
+    "items": [
+      {
+        "title": "Expertise Dupla",
+        "description": "Domínio profundo em Protheus (TOTVS) e Angular moderno"
+      },
+      {
+        "title": "Entrega Garantida",
+        "description": "Projetos entregues no prazo com qualidade excepcional"
+      },
+      {
+        "title": "Stack Moderna",
+        "description": "ADVPL, TLPP, PO-UI, Angular, NestJS, PostgreSQL"
+      }
+    ]
+  },
+  "services": {
+    "title": "Nossos Serviços",
+    "items": [
+      {
+        "title": "Customizações Protheus",
+        "description": "ADVPL, TLPP, integrações, módulos específicos"
+      },
+      {
+        "title": "Front-end Angular",
+        "description": "Interfaces modernas com PO-UI e Angular standalone"
+      },
+      {
+        "title": "Integrações",
+        "description": "APIs REST, webhooks, ETL, sincronização de dados"
+      },
+      {
+        "title": "Sustentação",
+        "description": "Suporte, manutenção, otimização de performance"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projetos em Destaque",
+    "viewMore": "Ver Todos os Projetos"
+  },
+  "testimonials": {
+    "title": "O que nossos clientes dizem"
+  },
+  "cta": {
+    "title": "Transforme seu Protheus",
+    "subtitle": "Solicite um orçamento gratuito para seu projeto",
+    "button": "Conversar com Especialista"
+  },
+  "footer": {
+    "company": "VCS Info — Consultoria Protheus & Angular",
+    "copyright": "© 2026 VCS Info. Todos os direitos reservados.",
+    "links": {
+      "privacy": "Privacidade",
+      "terms": "Termos",
+      "contact": "Contato"
+    },
+    "social": "Redes Sociais"
+  },
+  "common": {
+    "loading": "Carregando...",
+    "error": "Ocorreu um erro",
+    "success": "Sucesso!",
+    "back": "Voltar"
+  }
+}
